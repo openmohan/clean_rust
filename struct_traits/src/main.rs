@@ -17,17 +17,17 @@ impl Car {
     }
 }
 
-trait vehicle{
+trait Vehicle{
     fn drive(&self) -> String;
 }
 
-impl vehicle for Car {
+impl Vehicle for Car {
     fn drive(&self) -> String {
         return self.drive()
     }
 }
 
-fn driveVehicle(v:&dyn vehicle) {
+fn drive_vehicle(v:&dyn Vehicle) {
     println!("from drive vehicle");
     v.drive();
 }
@@ -36,5 +36,5 @@ fn main() {
     println!("Hello, world!");
     let c = Car::new("test", "number");
     println!("{}",c.drive());
-    driveVehicle(&c)
+    drive_vehicle(&c)
 }
